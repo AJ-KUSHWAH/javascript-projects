@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Snake Bar</title>
+  </head>
+  <body>
+    <div class="buttons">
+      <button type="submit" onclick="buttonClicked(successMsg)">Success</button>
+      <button type="submit" onclick="buttonClicked(errorMsg)">Failure</button>
+      <button type="submit" onclick="buttonClicked(invalidMsg)">Invalid</button>
+    </div>
+    <div id="toasts"></div>
+
+    <script>
+      const successMsg = "Submitted Successfully!";
+      const errorMsg = "Please fix the error!";
+      const invalidMsg = "Invalid Input!";
+
+      const buttonClicked = (msg) => {
+        const toast = document.createElement("div");
+        toast.classList.add("toast");
+        toast.innerText = msg;
+
+        document.getElementById("toasts").appendChild(toast);
+        setTimeout(() => {
+          toast.remove();
+        }, 3000);
+      };
+    </script>
+  </body>
+</html>

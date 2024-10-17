@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.buttons {
+  background-color: aquamarine;
+  color: black;
+  margin: 5px;
+}
+
+#toasts {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  margin: 2px;
+  padding: 2px 0;
+  width: 400px;
+  height: 80px;
+  background: #fff;
+  font-weight: 500;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
