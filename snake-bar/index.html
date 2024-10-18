@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Snake Bar</title>
+    <script
+      src="https://kit.fontawesome.com/8db0d4ce93.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="buttons">
@@ -15,19 +19,29 @@
     <div id="toasts"></div>
 
     <script>
-      const successMsg = "Submitted Successfully!";
-      const errorMsg = "Please fix the error!";
-      const invalidMsg = "Invalid Input!";
+      let successMsg =
+        '<i class="fa-solid fa-square-check"></i> Submitted Successfully!';
+      const errorMsg =
+        ' <i class="fa-solid fa-circle-xmark"></i> lease fix the error!';
+      const invalidMsg =
+        ' <i class="fa-solid fa-circle-exclamation"></i> Invalid Input!';
 
       const buttonClicked = (msg) => {
         const toast = document.createElement("div");
         toast.classList.add("toast");
-        toast.innerText = msg;
+        toast.innerHTML = msg;
 
         document.getElementById("toasts").appendChild(toast);
         setTimeout(() => {
           toast.remove();
-        }, 3000);
+        }, 5000);
+
+        if (msg.includes("error")) {
+          toast.classList.add("error");
+        }
+        if (msg.includes("Invalid")) {
+          toast.classList.add("invalid");
+        }
       };
     </script>
   </body>
